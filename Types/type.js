@@ -83,4 +83,32 @@ const employee = {
 console.log(employee.managers);
 console.log(employee.baterPonto(10));
 console.log(employee.baterPonto(5));
+console.log("Finish Challenge============");
 // Union types
+let nota = 10;
+console.log(`minha nota e ${nota}! `);
+//Checking types
+let valor = true;
+if (typeof valor == "number") {
+    console.log("It's a number");
+}
+else {
+    console.log(typeof valor);
+}
+// never 
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: "sabao",
+    preco: -1,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preco invalido!');
+        }
+    }
+};
+produto.validarProduto();
