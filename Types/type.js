@@ -49,3 +49,38 @@ let calculo;
 // calculo()
 calculo = multiplicar;
 console.log(calculo(5, 7.54));
+// objeto
+let usuario = {
+    nome: "Joao",
+    idade: 27
+};
+//usuario = {} // wrong
+console.log(usuario);
+usuario = {
+    idade: 46,
+    nome: "Adalberto"
+};
+console.log(usuario);
+// CHALLENGE 
+/* object employee
+- string array w/ name of managers
+- function "bater ponto" receive hour(number) and return string
+--> normal "ponto" (<=8)
+--> out of "ponto" (>8)
+*/
+console.log("Employee Challenge");
+const employee = {
+    managers: ["Managers: Jose", "Robert", "Luiz", "Pedro"],
+    baterPonto(hour) {
+        if (hour <= 8) {
+            return "The time is okay";
+        }
+        else {
+            return "The time is past 8 hours";
+        }
+    }
+};
+console.log(employee.managers);
+console.log(employee.baterPonto(10));
+console.log(employee.baterPonto(5));
+// Union types
