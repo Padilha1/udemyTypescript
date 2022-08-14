@@ -133,7 +133,7 @@ function falha(msg: string): never {
 }
 
 const produto = {
-    nome: "sabao",
+    nome: "sabao", // "   "
     preco : -1,
     validarProduto(){
         if(!this.nome || this.nome.trim().length == 0){
@@ -144,4 +144,51 @@ const produto = {
         }
     }
 }
-produto.validarProduto()
+//produto.validarProduto()
+
+// null 
+
+let height = 12
+// height = null
+// let height: null | number = 12
+
+type Contact ={
+    name: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contact1: Contact ={
+    name: "Alerrt",
+    tel1:" 3895498235",
+    tel2: null
+}
+console.log(contact1)
+
+
+// Challenge 2
+type BankAccount = {
+    saldo: number,
+    deposit: (value: number)=> void
+}
+let bankAccount: BankAccount = {
+    saldo : 3456,
+    deposit(value:number){
+        this.saldo += value
+    }
+}
+
+type User = {
+    name: string,
+    bankAccount: BankAccount,
+    contacts: string[]
+
+}
+let user: User = {
+    name: 'Ana Silva',
+    bankAccount: bankAccount,
+    contacts: ['123456', '234567']
+}
+
+user.bankAccount.deposit(3000)
+console.log(user)

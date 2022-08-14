@@ -111,4 +111,25 @@ const produto = {
         }
     }
 };
-produto.validarProduto();
+//produto.validarProduto()
+// null 
+let height = 12;
+const contact1 = {
+    name: "Alerrt",
+    tel1: " 3895498235",
+    tel2: null
+};
+console.log(contact1);
+let bankAccount = {
+    saldo: 3456,
+    deposit(value) {
+        this.saldo += value;
+    }
+};
+let user = {
+    name: 'Ana Silva',
+    bankAccount: bankAccount,
+    contacts: ['123456', '234567']
+};
+user.bankAccount.deposit(3000);
+console.log(user);
