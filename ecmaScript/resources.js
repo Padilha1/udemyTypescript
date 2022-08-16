@@ -1,5 +1,5 @@
 "use strict";
-// let & const
+// let & const =======================
 let seraQue = '?';
 console.log(seraQue);
 //var seraQue = '?'  // hoisting
@@ -29,3 +29,23 @@ for (var i = 0; i < 10; i++) {
     console.log(i);
 }
 // console.log(i)
+// Arrow Function ===================
+function somar(n1, n2) {
+    return n1 + n2;
+}
+console.log(somar(2, 2));
+const subtrair = (n1, n2) => n1 - n2;
+console.log(5, 7);
+const saudacao = () => console.log("Hello World");
+saudacao();
+const falarCom = (pessoa) => console.log('Hello ' + pessoa);
+falarCom("Joao");
+//this
+function withThis() {
+    console.log(this);
+}
+const withThisSpecial = withThis.bind(2);
+withThisSpecial();
+//this ??
+const ArrowThis = () => console.log(this);
+ArrowThis();

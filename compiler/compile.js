@@ -14,8 +14,8 @@ let anything;
 anything = 12;
 anything = "bac";
 // strictNullCheck, noUnusedParameters, noUnusedLocals
-function saudar(isManha, hour) {
-    let a = 231;
+function saudar(isManha) {
+    // let a = 231;
     let saudacao;
     if (isManha) {
         saudacao = "Good morning!";

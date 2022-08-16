@@ -19,8 +19,8 @@ anything = "bac";
 
 // strictNullCheck, noUnusedParameters, noUnusedLocals
 
-function saudar(isManha: boolean, hour: number) {
-  let a = 231;
+function saudar(isManha: boolean, /*hour: number*/) {
+ // let a = 231;
   let saudacao: string;
   if (isManha) {
     saudacao = "Good morning!";
