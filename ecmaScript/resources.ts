@@ -109,3 +109,25 @@ function tupleParam2(...params: [number, string, boolean]){
 }
 
 tupleParam2(...tuple)
+
+// Destructuring Array
+const caracts = ['Motor Zetec 123', 2020]
+// const motor = caracts[0]
+// const ano = caracts[1]
+
+const [motor, ano] = caracts
+console.log(motor)
+console.log(ano)
+
+// Destructuring Object
+
+const item = {
+    nome: "SSD 324gb",
+    preco: 213
+}
+// const nomeItem = item.nome
+// const preco = item.preco
+const {nome: n, preco: p} = item
+console.log(n)
+console.log(p)
+
