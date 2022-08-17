@@ -131,3 +131,62 @@ const {nome: n, preco: p} = item
 console.log(n)
 console.log(p)
 
+// Template String
+const userID:string = 'Suporte1'
+const Notificacao:string = '2384'
+// const boasVindas = 'Boas vindas' + userID +
+//     'Notificacoes: ' + Notificacao
+const boasVindas2 = `Boas vindas ${userID}, Notificacoes: ${parseInt(Notificacao) > 9 ? '9' : Notificacao}`
+// console.log(boasVindas)
+console.log(boasVindas2)
+
+// challenges
+//1
+/**
+ * 
+ * @param valor 
+ * @returns valor * 2
+ */
+var double = function(valor:number){ // check
+    return valor * 2
+}
+console.log(double(10))
+
+//2
+var dizerOla = function (nome:string ){  //Check
+    if( nome === undefined) {nome = 'Pessoa'}
+    //console.log('Hello ' + nome + '!')
+    console.log(`Hello ${nome}!`) // check
+}
+// dizerOla()
+dizerOla('Patricia')
+
+//3
+// the minimum value
+var nums = [-3, 33, 38, 5]
+console.log(Math.min(...nums))  // Check
+
+//4
+var array =[ 55, 20, ...nums] // Check
+// add nums to array 
+console.log(array)
+
+//5
+var notas = [8.5, 6.3, 9,4]
+// var notas1 = notas[0]
+// var notas2 = notas [1]
+// var notas3 = notas[2]
+const [nota1, nota2, nota3] = notas
+// console.log(notas1, notas2, notas3)
+console.log(nota1, nota2, nota3)
+
+
+//6
+var cientist = {
+    primeiroNome: 'WilL Smith',
+    experiencia: 22
+}
+// var primeiroNome = cientist.primeiroNome
+// var experiencia = cientist.experiencia
+const {primeiroNome: pN, experiencia: exp} = cientist
+console.log(`Name: ${pN} with ${exp} years experience`)
