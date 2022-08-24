@@ -114,42 +114,61 @@ console.log(boasVindas2);
  * @param valor
  * @returns valor * 2
  */
-var double = function (valor) {
-    return valor * 2;
-};
+const double = (valor) => valor * 2;
 console.log(double(10));
 //2
-var dizerOla = function (nome) {
-    if (nome === undefined) {
-        nome = 'Pessoa';
-    }
-    //console.log('Hello ' + nome + '!')
+const dizerOla = function (nome = 'Pessoa') {
     console.log(`Hello ${nome}!`); // check
 };
-// dizerOla()
+dizerOla();
 dizerOla('Patricia');
 //3
 // the minimum value
-var nums = [-3, 33, 38, 5];
+const nums = [-3, 33, 38, 5];
 console.log(Math.min(...nums)); // Check
 //4
-var array = [55, 20, ...nums]; // Check
+const array = [55, 20, ...nums]; // Check
 // add nums to array 
 console.log(array);
 //5
-var notas = [8.5, 6.3, 9, 4];
-// var notas1 = notas[0]
-// var notas2 = notas [1]
-// var notas3 = notas[2]
+const notas = [8.5, 6.3, 9, 4];
+// const notas1 = notas[0]
+// const notas2 = notas [1]
+// const notas3 = notas[2]
 const [nota1, nota2, nota3] = notas;
-// console.log(notas1, notas2, notas3)
 console.log(nota1, nota2, nota3);
 //6
-var cientist = {
+const cientist = {
     primeiroNome: 'WilL Smith',
     experiencia: 22
 };
-// var primeiroNome = cientist.primeiroNome
-// var experiencia = cientist.experiencia
+// const primeiroNome = cientist.primeiroNome
+// const experiencia = cientist.experiencia
 const { primeiroNome: pN, experiencia: exp } = cientist;
 console.log(`Name: ${pN} with ${exp} years experience`);
+// Callback 
+function wait3sec(callback) {
+    setTimeout(() => {
+        callback('3 secs after...');
+    }, 3000);
+}
+wait3sec(function (resultado) {
+    console.log(resultado);
+});
+// Promise
+function wait3secPromise() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('3 secs after promise...');
+        }, 3000);
+    });
+}
+wait3secPromise()
+    .then(dado => console.log(dado));
+// Example
+fetch('https://swapi.dev/api/people/1')
+    .then(res => res.json())
+    .then(perso => perso.films)
+    .then(films => fetch(films[0]))
+    .then(resFilm => resFilm.json())
+    .then(filme => console.log(filme.title));
