@@ -87,7 +87,7 @@ class Car {
     constructor(public brand:string, public model:string, private maxSpeed: number = 250 ){
 
     }
-    private changeSpeed(delta:number):number {
+    protected changeSpeed(delta:number):number {
         const newSpeed = this.currentSpeed + delta
         const validSpeed = newSpeed >= 0 &&
             newSpeed <=this.maxSpeed
@@ -108,7 +108,6 @@ class Car {
     }
 }
 
-
 const car1 = new Car('Ford', 'Ka', 185)
 
 Array(50).fill(0).forEach(()=> car1.accelerate())
@@ -117,3 +116,28 @@ console.log(car1.accelerate())
 Array(20).fill(0).forEach(()=> car1.brake())
 console.log('Braking')
 console.log(car1.brake())
+
+
+// Heritage
+
+class Ferrari extends Car {
+    constructor(model: string, maxSpeed:number){
+        super('Ferrari',model, maxSpeed)
+        //...
+    }
+    public accelerate ():number {
+        return this.changeSpeed(20)
+    }
+
+    public brake():number {
+        return this.changeSpeed(-16)
+    }
+}
+
+const f40 = new Ferrari('F40', 324)
+console.log(`${f40.brand} ${f40.model}`)
+console.log(f40.accelerate())
+console.log(f40.accelerate())
+console.log(f40.accelerate())
+console.log(f40.brake())
+console.log(f40.brake())

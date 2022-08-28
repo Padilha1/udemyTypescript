@@ -94,3 +94,23 @@ console.log(car1.accelerate());
 Array(20).fill(0).forEach(() => car1.brake());
 console.log('Braking');
 console.log(car1.brake());
+// Heritage
+class Ferrari extends Car {
+    constructor(model, maxSpeed) {
+        super('Ferrari', model, maxSpeed);
+        //...
+    }
+    accelerate() {
+        return this.changeSpeed(20);
+    }
+    brake() {
+        return this.changeSpeed(-16);
+    }
+}
+const f40 = new Ferrari('F40', 324);
+console.log(`${f40.brand} ${f40.model}`);
+console.log(f40.accelerate());
+console.log(f40.accelerate());
+console.log(f40.accelerate());
+console.log(f40.brake());
+console.log(f40.brake());
