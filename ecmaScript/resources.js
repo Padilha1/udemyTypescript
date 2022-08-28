@@ -147,28 +147,28 @@ const cientist = {
 const { primeiroNome: pN, experiencia: exp } = cientist;
 console.log(`Name: ${pN} with ${exp} years experience`);
 // Callback 
-function wait3sec(callback) {
-    setTimeout(() => {
-        callback('3 secs after...');
-    }, 3000);
-}
-wait3sec(function (resultado) {
-    console.log(resultado);
-});
-// Promise
-function wait3secPromise() {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve('3 secs after promise...');
-        }, 3000);
-    });
-}
-wait3secPromise()
-    .then(dado => console.log(dado));
-// Example
-fetch('https://swapi.dev/api/people/1')
-    .then(res => res.json())
-    .then(perso => perso.films)
-    .then(films => fetch(films[0]))
-    .then(resFilm => resFilm.json())
-    .then(filme => console.log(filme.title));
+// function wait3sec (callback: (dado: string)=> void) {
+//     setTimeout(() => {
+//         callback('3 secs after...')
+//     }, 3000)
+// }
+// wait3sec(function(resultado: string){
+//     console.log(resultado)
+// })
+// // Promise
+// function wait3secPromise () {
+//     return new Promise((resolve: any) => {
+//         setTimeout(() => {
+//             resolve('3 secs after promise...')
+//         }, 3000)
+//     })
+// }
+// wait3secPromise()
+//     .then(dado => console.log(dado))
+// // Example
+// fetch('https://swapi.dev/api/people/1')
+//     .then(res => res.json())
+//     .then(perso => perso.films)
+//     .then(films => fetch(films[0]))
+//     .then(resFilm => resFilm.json())
+//     .then(filme => console.log(filme.title))
