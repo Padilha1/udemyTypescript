@@ -161,6 +161,79 @@ const person1 = new Person
 person1.age = 10
 console.log(person1)
 
+// Static Member
+class Math2 {
+    static PI: number = 3.1416
+
+    static areaCirc(raio: number): number{
+        return Math2.PI * raio * raio
+    }
+}
+// const m1 = new Math()
+// console.log(m1.areaCirc(4))
+console.log(Math2.areaCirc(4))
 
 
+// Abstract Class =! ~Concrete~ 
+abstract class Calc {
+    protected result: number = 0
+
+    abstract execute(...numeros: number[]): void
+
+    getResult(): number{
+        return this.result
+    }
+}
+
+class Sum extends Calc {
+    execute(...numeros: number[]): void {
+        this.result = numeros.reduce((t,a) => t + a)
+    }
+}
+class Multiply extends Calc {
+    execute(...numeros: number[]): void {
+        this.result = numeros.reduce((t,a) => t * a)
+    }
+}
+
+let c1 = new Sum()
+c1.execute(2, 3, 4,6)
+console.log(c1.getResult())
+
+c1 = new Multiply()
+c1.execute(4, 3, 5, 5)
+console.log(c1.getResult())
+
+
+//Private Constructor  && Singleton
+
+class Unique{
+    private static instance: Unique = new Unique
+    private constructor(){    }
+    static getInstance(): Unique{
+        return Unique.instance
+    }
+    now(){
+        return new Date
+    }
+}
+
+
+//const wrong = new Unique()
+
+console.log(Unique.getInstance().now())
+
+// Attribute only Read
+class Plane {
+    public readonly model: string
+
+    constructor(model: string,
+        public readonly prefix:string){
+            this.model = model
+        }
+}
+
+const turboHelice = new Plane('Tu-113', 'PT-ABC')
+// turboHelice.model = 'D321'
+// turboHelice.prefix = 'PT-DEF'
 
