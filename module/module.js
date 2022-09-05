@@ -10,3 +10,17 @@ const circuference_1 = require("./circuference");
 const rectangle_1 = __importDefault(require("./rectangle"));
 console.log((0, circuference_1.areaCircuference)(10));
 console.log((0, rectangle_1.default)(5, 10));
+const { sayHi } = require('./novo');
+console.log(sayHi('Ana'));
+/* NAMESPACE
+    organized with objects
+    separated in multiple files
+    don't need Loaders
+    (dependecies management) Complicated to bigger application
+*/
+/* MODULES
+    organized with real modules
+    APP can have multiple modules
+    Needs a Loader
+    Explicit declaration of Dependecies
+*/ 
