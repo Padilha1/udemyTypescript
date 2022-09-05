@@ -1,21 +1,12 @@
 console.log("=========NameSpaces=========")
-
-// namaspace == export function
-
-namespace Areas {
-    const PI = 3.14
-
-    export function areaCirc(raio:number):number{
-        return PI*Math.pow(raio,2)
-    }
-
-
-    export function areaRet(base:number, altura:number):number{
-        return base * altura
-    }
-
-}
+// Below, doesn't guarantee the IMPORT
+///<reference path="geometryCirc.ts"/>
+///<reference path="geometryRet.ts"/>
 
 // reference to namespace
-console.log(Areas.areaCirc(10))
-console.log(Areas.areaRet(10, 15))
+// DON'T FORGET TO REFERENCE IN INDEX
+console.log(Geometry.Area.areaCirc(10))
+console.log(Geometry.Area.areaRet(10, 15))
+
+// Namespace Inside 
+// export inner namespace and reference at console.log

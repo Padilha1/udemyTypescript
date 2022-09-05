@@ -8,13 +8,32 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <script src="node_modules\systemjs\dist\system.js"></script>
     <script src="intro/basic.js"></script>
     <script src="Types/type.js"></script>
     <script src="compiler/compile.js"></script>
     <script src="ecmaScript/resources.js"></script>
     <script src="ClassesObjects/classes&object.js"></script>
     <script src="ClassesObjects/challenge.js"></script>
+    <script src="Namespaces/geometryCirc.js"></script>
+    <script src="Namespaces/geometryRet.js"></script>
     <script src="Namespaces/namespace.js"></script>
+    <!-- <script src="module/module.js"></script> -->
+    <script>
+        SystemJS.config({
+          baseUrl: '/module',
+          packages: {
+            '/module': {
+              defaultJSExtension: true
+            }
+          }
+        })
+
+        SystemJS.import('./module/module.js')
+    </script>
+    
+    
+
     <h1>See Console on Dev Tools to see the results!</h1>
     <div class="iframe">
     <iframe
